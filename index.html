@@ -121,8 +121,6 @@
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
-
-                document.body.appendChild(script);
                 let enterARButton = document.getElementById('enterar');
                 let enterVRButton = document.getElementById('entervr');
 
@@ -143,6 +141,8 @@
                 alert(message);
               });
             };
+
+      document.body.appendChild(script);
     </script>
   </body>
 </html>
