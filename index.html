@@ -2,15 +2,16 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Unity WebXR Export</title>
-    <meta name="description" content="Complete interactive 3D scene demo made in Unity and exported to WebXR with the WebXR template of the Unity WebXR Export">
+    <title>Unity WebGL Player | WebVRTemplate</title>
+    <meta name="description" content="">
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container">
-      <div id="unity-canvas-container">
+      <div id="unity-canvas-container" style="width: 100%; height: 100%;">
         <canvas id="unity-canvas" style="width: 100%; height: 100%;"></canvas>
       </div>
       <div id="unity-loading-bar">
@@ -24,21 +25,20 @@
         <button id="entervr" value="Enter VR" disabled>VR</button>
         <button id="enterar" value="Enter AR" disabled>AR</button>
         <div id="unity-webxr-link">Using <a href="https://github.com/De-Panther/unity-webxr-export" target="_blank" title="WebXR Export">WebXR Export</a></div>
-        <div id="unity-build-title">Unity WebXR Export</div>
+        <div id="unity-build-title">WebVRTemplate</div>
       </div>
     </div>
     <script>
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/WebVRTemplate.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebVRTemplate.data.br",
-        frameworkUrl: buildUrl + "/WebVRTemplate.framework.js.br",
-        codeUrl: buildUrl + "/WebVRTemplate.wasm.br",
+        dataUrl: buildUrl + "/WebVRTemplate.data.unityweb",
+        frameworkUrl: buildUrl + "/WebVRTemplate.framework.js.unityweb",
+        codeUrl: buildUrl + "/WebVRTemplate.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "WebVRTemplate",
         productVersion: "0.1.0",
-        showBanner: unityShowBanner,
       };
 
       var container = document.querySelector("#unity-container");
@@ -50,8 +50,6 @@
       var unityInstance = null;
       
 
-      canvasContainer.style.width = "700px";
-      canvasContainer.style.height = "400px";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
